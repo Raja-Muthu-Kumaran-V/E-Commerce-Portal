@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Support — MyShop</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <h2>Customer Care</h2>
+
+    <section>
+      <h3>Raise a Query</h3>
+      <form id="supportForm">
+        <label>Your Email<input id="supportEmail" type="email" required/></label>
+        <label>Message<textarea id="supportMsg" required></textarea></label>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h3>Product Reviews</h3>
+      <div id="reviews"></div>
+      <form id="reviewForm">
+        <label>Product ID <input id="revProductId" /></label>
+        <label>Review <textarea id="revText"></textarea></label>
+        <button type="submit" class="btn">Add Review</button>
+      </form>
+    </section>
+
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

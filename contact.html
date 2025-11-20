@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — MyShop</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><img src="assets/images/logo.png" alt="MyShop Logo" style="height:36px;vertical-align:middle"> MyShop</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="support.html">Customer Care</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="orders.html">Orders</a>
+        <a href="wishlist.html">Wishlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container form-page">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label>Full Name
+        <input type="text" id="contactName" required />
+      </label>
+      <label>Email
+        <input type="email" id="contactEmail" required />
+      </label>
+      <label>Subject
+        <input type="text" id="contactSubject" />
+      </label>
+      <label>Message
+        <textarea id="contactMessage" rows="6" required></textarea>
+      </label>
+      <div id="contactResult" class="error"></div>
+      <button type="submit" class="btn primary">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 MyShop — Demo Project</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+      const result = document.getElementById('contactResult');
+      result.textContent = '';
+      if(name.length < 2){ result.textContent = 'Please enter name'; return; }
+      if(!/^\S+@\S+\.\S+$/.test(email)){ result.textContent = 'Enter valid email'; return; }
+      if(msg.length < 5){ result.textContent = 'Please enter a message'; return; }
+      // Save to localStorage as demo
+      const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
+      contacts.push({name,email,subject:document.getElementById('contactSubject').value, message:msg, date: new Date().toLocaleString()});
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+      alert('Message sent — thank you!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
