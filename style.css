@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f7;
+}
+
+header nav {
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10%;
+}
+
+.logo-img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: #dcdcdc;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+nav a.active,
+nav a:hover {
+    background: #fff;
+    color: #222;
+    border-radius: 4px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 10%;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+}
+
+.hero img {
+    width: 45%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.feature-box {
+    width: 30%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.products {
+    padding: 40px 10%;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+form input,
+form select,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 12px;
+}
+
+form button {
+    background: #222;
+    color: #fff;
+    border: none;
+}
+
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 40px;
+}
