@@ -1,0 +1,87 @@
+// Orders & Wishlist simulation
+let orders = [];
+let wishlist = [];
+
+function addToCart(id) {
+    if (!orders.includes(id)) orders.push(id);
+    displayOrders();
+}
+
+function toggleWishlist(id) {
+    if (wishlist.includes(id)) {
+        wishlist = wishlist.filter(i => i !== id);
+    } else {
+        wishlist.push(id);
+    }
+    displayWishlist();
+}
+
+function displayOrders() {
+    const ul = document.getElementById("ordersList");
+    if(!ul) return;
+    ul.innerHTML = orders.map(id => `<li>Product ${id}</li>`).join('');
+}
+
+function displayWishlist() {
+    const ul = document.getElementById("wishlistItems");
+    if(!ul) return;
+    ul.innerHTML = wishlist.map(id => `<li>Product ${id}</li>`).join('');
+}
+
+// Reviews
+function addReview() {
+    const input = document.getElementById("reviewInput");
+    const reviewsList = document.getElementById("reviewsList");
+    if(input && input.value.trim() !== '') {
+        reviewsList.innerHTML += `<p>You: ${input.value}</p>`;
+        input.value = '';
+    }
+}
+
+// Login/Register validation
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById("loginForm");
+    if(loginForm){
+        loginForm.addEventListener("submit", function(e){
+            const pass = document.getElementById("loginPass").value;
+            if(pass.length < 6){
+                alert("Password must be at least 6 characters");
+                e.preventDefault();
+            }
+        });
+    }
+
+    const registerForm = document.getElementById("registerForm");
+    if(registerForm){
+        registerForm.addEventListener("submit", function(e){
+            const name = document.getElementById("regName").value;
+            const pass = document.getElementById("regPass").value;
+            if(name.length < 3){
+                alert("Name must be at least 3 characters");
+                e.preventDefault();
+            }
+            if(pass.length < 6){
+                alert("Password must be at least 6 characters");
+                e.preventDefault();
+            }
+        });
+    }
+
+    const reportForm = document.getElementById("reportForm");
+    if(reportForm){
+        reportForm.addEventListener("submit", function(e){
+            const name = document.getElementById("reportName").value;
+            const email = document.getElementById("reportEmail").value;
+            const type = document.getElementById("reportType").value;
+            const message = document.getElementById("reportMessage").value;
+            if(!name || !email || !type || !message){
+                alert("Please fill all report fields");
+                e.preventDefault();
+            } else {
+                alert("Report submitted successfully!");
+                reportForm.reset();
+                e.preventDefault();
+            }
+        });
+    }
+});
