@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MyShop — Home</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">MyShop</div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="support.html">Customer Care</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="register.html" class="btn">Register</a>
-        <a href="login.html" class="btn">Login</a>
-      </nav>
+<header>
+    <nav>
+        <img src="images/logo.jpg" class="logo-img" alt="Logo">
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Customer Care</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Welcome to Our Raja's Online Store</h1>
+        <p>Shop the best products with ease.</p>
+        <a href="products.html" class="btn">Shop Now</a>
     </div>
-  </header>
+    <img src="images/logo.jpg" alt="Banner Image">
+</section>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Welcome to MyShop</h1>
-      <p>Reliable products, fast delivery — built as an assignment demo.</p>
-      <a href="products.html" class="btn primary">Shop Now</a>
-    </section>
+<section class="features">
+    <h2>Features</h2>
+    <div class="feature-grid">
+        <div class="feature-box">
+            <h3>Orders</h3>
+            <p>View your orders list with status.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Wishlist</h3>
+            <p>Add products you like to your wishlist.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Customer Care</h3>
+            <p>Contact support or report issues.</p>
+        </div>
+    </div>
+</section>
 
-    <section class="features">
-      <div class="feature">Orders & Order History</div>
-      <div class="feature">Wishlist</div>
-      <div class="feature">Reviews & Ratings</div>
-      <div class="feature">Customer Care</div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 MyShop — Demo Project</p>
-  </footer>
-
-  <script src="js/app.js" defer></script>
+<footer>
+    <p>© 2025 Raja's E-Commerce Portal</p>
+</footer>
 </body>
 </html>
