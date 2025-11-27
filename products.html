@@ -1,32 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MyShop — Products</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">MyShop</div>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="support.html">Customer Care</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="orders.html">Orders</a>
-        <a href="wishlist.html">Wishlist</a>
-      </nav>
+<header>
+    <nav>
+        <img src="images/logo.jpg" class="logo-img" alt="Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="products.html">Products</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Customer Care</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="products">
+    <h1>Products</h1>
+    <div class="product-grid">
+        <div class="product-card" data-id="101">
+            <img src="images/charger.jpg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>₹1,299</p>
+            <button onclick="addToCart(101)">Add to Cart</button>
+            <button onclick="toggleWishlist(101)">❤ Wishlist</button>
+        </div>
+        <div class="product-card" data-id="102">
+            <img src="images/headphone.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>₹1,899</p>
+            <button onclick="addToCart(102)">Add to Cart</button>
+            <button onclick="toggleWishlist(102)">❤ Wishlist</button>
+        </div>
+        <div class="product-card" data-id="103">
+            <img src="images/mechanicalkeyboard.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>₹999</p>
+            <button onclick="addToCart(103)">Add to Cart</button>
+            <button onclick="toggleWishlist(103)">❤ Wishlist</button>
+        </div>
+        <div class="product-card" data-id="104">
+            <img src="images/smartwatch.jpg" alt="Product 4">
+            <h3>Product 4</h3>
+            <p>₹799</p>
+            <button onclick="addToCart(104)">Add to Cart</button>
+            <button onclick="toggleWishlist(104)">❤ Wishlist</button>
+        </div>
     </div>
-  </header>
 
-  <main class="container">
-    <h2>Products</h2>
-    <div id="products-grid" class="grid"></div>
-  </main>
+    <section class="orders">
+        <h2>Your Orders</h2>
+        <ul id="ordersList"></ul>
+    </section>
 
-  <script src="js/app.js" defer></script>
+    <section class="wishlist">
+        <h2>Your Wishlist</h2>
+        <ul id="wishlistItems"></ul>
+    </section>
+
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div id="reviewsList">
+            <p>John: Great products!</p>
+            <p>Mary: Fast delivery.</p>
+        </div>
+        <textarea id="reviewInput" placeholder="Add your review"></textarea>
+        <button onclick="addReview()">Submit Review</button>
+    </section>
+</section>
+
+<footer>
+    <p>© 2025 Raja's E-Commerce Portal</p>
+</footer>
 </body>
 </html>
